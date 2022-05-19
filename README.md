@@ -30,6 +30,15 @@ print(len(keyword.kwlist)) # 36
 ```
 
 **變量輸出**
+
+```python=
+print("meow")
+name = "ME"
+age = 87
+gender = 'boy'
+print(name, age, gender)
+
+```
     
    
 
