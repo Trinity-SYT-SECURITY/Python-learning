@@ -41,6 +41,8 @@ print(name, age, gender,sep="") # Me87boy
 print(name, age, gender,sep="*") # Me*87*boy
 print(name, age, gender, sep="*", end="\n") #\n是跳行 , end="" 這樣的話不會換行輸出 
 
+print("meow: \" I want eat some food! \"") # meow: " I want eat some food "
+print('meow: \" I want eat some food! \"') #單雙引號嵌套使用  meow: " I want eat some food "
 ``` 
     
    
