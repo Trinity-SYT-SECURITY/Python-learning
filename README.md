@@ -66,9 +66,9 @@ score = 59.5
 print("我期末英語成績 : %f" % score) # %f表示一個符點數，默認小數後面有6位 59.500000
 print("我期末英語成績 : %.2f" % score) #只想小數後留2位 59.50
 
-#一個小數scale = 0.2,輸出: 數據比例是20.00%
+# 定義一個小數scale = 0.2, 輸出: 數據比例是20.00%
 scale = 0.2
-print("數據比例是%.2f%%" % (scale*100)) #scale*100 要加括號 否則 會把前面的話 輸出100遍 %%表示輸出一個%
+print("數據比例是: %.2f%%" % (scale*100))#數據比例是: 20.00% #scale*100 要加括號 否則 會把前面的話 輸出100遍 %%表示輸出一個%
 
 ```
 
@@ -92,6 +92,22 @@ print("姓名: {0} , 性別:{1},年齡: {2}, 姓名是啥來著{0}".format(name,
 #可以使用標示名稱的方式
 print("姓名: {meow} , 性別:{xingbie},年齡: {age}, 姓名是啥來著{meow}".format(meow=name,xingbie=gender,age=age)) #姓名: meow , 性別:女,年齡: 18, 姓名是啥來著meow
 
+#定義整數變量 student_no,輸出:我的學號000004
+student_no = 4
+print("我的學號: %06d" % student_no)
+print("我的學號: {:06d}".format(student_no)) #我的學號: 000004
+
+#定義小數price,weight,money, 輸出 : 波羅單價9.00元/斤,購買了5.00斤,需要支付45.00元9.00
+price = 9.00
+weight = 5.00
+money = 45.00
+
+print("波羅單價%.2f元/斤,購買了%.2f斤,需要支付%.2f元" % (price,weight,money))
+print("波羅單價{:.2f}元/斤,購買{:.2f}斤,需要支付{:.2f}元".format(price, weight, money)) #波羅單價9.00元/斤,購買5.00斤,需要支付45.00元
+
+# 定義一個小數scale = 0.2, 輸出: 數據比例是20.00%
+scale = 0.2
+print("數據比例是{:.2f}%".format(scale*100))
 ```
 
 
