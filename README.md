@@ -159,3 +159,5 @@ print("{}擁有{},此裝備花了{}".format(role,equiment,pay))
 ```
 
 
+
+
