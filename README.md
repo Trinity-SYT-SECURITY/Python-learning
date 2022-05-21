@@ -107,9 +107,55 @@ print("波羅單價{:.2f}元/斤,購買{:.2f}斤,需要支付{:.2f}元".format(p
 
 # 定義一個小數scale = 0.2, 輸出: 數據比例是20.00%
 scale = 0.2
-print("數據比例是{:.2f}%".format(scale*100))
+print("數據比例是{:.2f}%".format(scale*100)) #數據比例是20.00%
+
 ```
 
+**輸入**
+```python=
+# input 默認沒有提示語句
+name = input()
+print(name)
 
+#給了提示語句會被打印出來，不會自動換行
+name = input("輸入名字 :　")　＃把鍵盤輸入的str賦值給name
+print(name)
+
+#input語句接收的內容是以字串形式存在的
+#類型轉換
+int(x) #將x轉換為整數
+float(x) #將x轉換為符點數
+```
+
+**項目演練**
+```python=
+#遊戲:被鵝追
+#輸入玩家名稱:
+#輸入密碼:
+#輸入充值帳號:
+print("被鵝追")
+name = input("輸入玩家名稱: ") # 輸入玩家名稱: meow
+passwd = input("輸入密碼: ")
+
+print("%s 請充值才可加入遊戲! " % name) # meow 請充值才可加入遊戲! 
+coins = input("輸入充值金額: ") # 輸入充值金額: 1000
+coins = int(coins)#類型轉換
+print("%s充值成功! 當前儲了:%d,請開始遊戲!" %(name,coins)) #meow充值成功! 當前儲了:1000,請開始遊戲!
+
+#遊戲:英雄聯盟
+#輸入角色
+#輸入擁有裝備
+#輸入想購買裝備
+#輸入金額
+print("英雄聯盟")
+role = input("輸入角色: ")
+equiment = input("輸入擁有裝備:　")
+print("{}當前擁有{}".format(role,equiment))
+upgrade_equiment = input("輸入想購買裝備: ")
+pay = input("請輸入金額: ")
+equiment = upgrade_equiment
+
+print("{}擁有{},此裝備花了{}".format(role,equiment,pay))
+```
 
 
