@@ -220,5 +220,16 @@ result = n1 >= n2 and n1 == n3 #true and false => false
 n4 = (n1 + n3) - n2 #(8 + 3) - 8 =>3
 result = n4 < n1 and (n4 + n3) > n2 #true and false => false
 
+# if...else
+a = 6
+b = 5
+
+#如果是true則將if前面的內容進行運算，並將結果賦值或成result
+#如果是false則將else後面的內容進行運算，並將結果賦值或成result
+
+result = (a + b) if a > b else (b - a)
+print(result) #11
 
 ```
+**條件判斷**
+
