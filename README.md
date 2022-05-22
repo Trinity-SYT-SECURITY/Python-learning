@@ -158,6 +158,67 @@ equiment = upgrade_equiment
 print("{}擁有{},此裝備花了{}".format(role,equiment,pay))
 ```
 
+**內存地址**
+```python=
+n = "meow"
+s = n
+print(n)
+
+#每次運行都是不一樣的內存地址，但n跟s都會一樣的地址值，指向同個內存位置
+print(id(n)) #2014419339760
+print(id(s)) #2014419339760
 
 
+n = "meow"
+s = n
+print(id(n)) #s = "meow" 1923566382832
 
+n = "nomeow"
+#n在內存中另外開了一個位址
+print(id(n)) #n = "nomeow" 1923566382576
+print(id(s)) #s = "meow" 1923566382832
+
+#使地址反覆使用多次
+money = 10
+money1 = 10
+print(id(money)) #1750925470288
+print(id(money1)) #1750925470288
+
+#但交互式interpreter時會因為數值過大而內存就會另開空間
+meow = 1000000
+meow1 = 1000000
+print(id(meow))
+print(id(meow1))
+
+#使用交互式interpreter 開闢空間的方式 分為小整數和大整數空間
+#使用小整數時會使用地址的覆用(-5~257)，大整數會重新開闢空間
+```
+
+**運算符**
+```python=
+# % ->取餘數
+# // ->取商整數
+#()中的運算符有最高優先權，再來是** > * > / > % > // > + > -
+
+# 使用關係運算符的表達式最終返回一個 bool 型的結果 true False
+a = 10000
+b = 10000
+a == b
+>>　true　＃表示ａ、ｂ值相同
+
+ａ is b #判斷a、b地址是否相同 is是身分運算符，用於判斷兩變量id
+>> false
+
+n1 = 8
+n2 = 5 
+n3 = 3
+result = n1 >= (n2 + n3) and n1 > n2 #true and true => true
+
+n2 += n3 #n2 = n2+n3 =>8
+result = n1 >= n2 and n1 == n3 #true and false => false
+
+n4 = (n1 + n3) - n2 #(8 + 3) - 8 =>3
+result = n4 < n1 and (n4 + n3) > n2 #true and false => false
+
+
+```
