@@ -253,5 +253,9 @@ print(result) #11
 #code 縮排為一個tab或四個空白鍵
 #python規定: 判斷的變量是" "、0、 None默認是False，"meow"有值則認為是True
 
-
+username =  " " #默認表示False
+if username != " ":
+#if username: #username == False
+    print("成功登入")
+print("下次再來")
 ```
