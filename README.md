@@ -440,6 +440,103 @@ while name != "q":
     if name == "q":
         print("程序結束")
 print("您輸入的名字有:", allname)
+
+#不斷要求用戶輸入一個數字，然後打印這個數字的兩倍，當用戶輸入q的時候程序退出
+
+while True:
+    num = input("輸入一個數字: ")
+    if num == "q":
+        print("程序結束")
+        break
+    print("您輸入的數字2倍是: %d" % (int(num)*2))
+
+#打印1-30之間的所有3的倍數    
+i = 1
+while i <= 30:
+    if i % 3 == 0:
+        print(i)
+    i += 1
     
+#for 循環
+for i in range(1, 31):
+    if i % 3 == 0:
+        print(i)
+        
+#水仙花數 自冪數 100-999 每個位的3次方，加起來還是他本身
+# 153 = 1^3 + 5^3 + 3^3。
+# 370 = 3^3 + 7^3 + 0^3。
+# 371 = 3^3 + 7^3 + 1^3。
+# 407 = 4^3 + 0^3 + 7^3。
+
+#abc
+#a = abc // 100
+#b = (abc % 100) // 10
+#c = abc % 10
+
+i = 100
+while i <= 999:
+    ones = i % 10  # 個位
+    tens = (i % 100) // 10  # 十位
+    handreds = i // 100  # 百位
+
+    if ones**3 + tens**3 + handreds**3 == i:
+        print("水仙花數是: ", i)
+    i += 1
+
+#打印1-100的和
+i = 1
+result = 0  # 用來記錄算術和
+while i <= 100:
+    result = result + i  # 求和的累加
+    i += 1
+
+print("1-100之間的和是{}".format(result))
+
+#不使用自符串拼接，在控制台連續輸出五行 "*",每一行 "*" 的數量一次遞增
+'''
+*
+**
+***
+****
+*****
+'''
+i = 0
+while i < 5:
+    i += 1
+    print("*"*i)
+#循環嵌套 外循環五次 內循環打印多少個 * 還要和外循環的次數相同
+i = 1
+while i <= 5:
+    # 內循環
+    j = 1
+    while j <= i:
+        print("*", end="")
+        j += 1
+    print("")  # 什麼都不打印，但要換行
+    i += 1
+
+
+#輸出99乘法表
+i = 1
+while i <= 9:
+    # 內循環
+    j = 1
+    while j <= i:
+        print("{}*{} ={}\t".format(j, i, i * j), end="")
+        j += 1
+    print("")  # 什麼都不打印，但要換行
+    i += 1
+
+ ```
+ ```mermaid
+ flowchart LR
+    a(i+1)-->b{i<=9}
+    b-->|false|c(停止運行)
+    b-->|true 進入內迴圈|d(j=1)
+    direction BT
+    d-->e{j<=1}
+    e-->|true|f(輸出i*j且j+1)
+    e-->|false|g(i+1)
+    g-->|回到外迴圈繼續執行|b
  ```
 
