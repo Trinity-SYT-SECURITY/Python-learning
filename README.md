@@ -337,4 +337,79 @@ while True:
     else: #條件 1 不滿足的處理
         條件 1 不滿足時，執行的代碼
 
-****
+**循環語句**
+一般情況下，需要錯重複執行的code，都可以用循環的方式完成
+(循環不是必要使用的，但是為了提高代碼的重複使用率，而使用)
+
+```python=
+for循環作為編程語言最強力的特徵之一
+python可以使用for語句循環遍歷整個序列的值
+
+    關鍵字 元素 關鍵字 集合
+    for   item  in    iterable:
+        do something
+
+range()函數 -> range(起始值 結束值,指定數字間隔)
+該函數是python的內置函數，用於生成一系列連續的整數，大多用於for循環語句中
+range(8) 起始值可以省略，默認從0開始 -->0,7 包前不包後，間隔可以省略，默認是1
+
+#range(start, end, step= 1)
+#range(start, end)
+#range(end)
+
+#range(0)是空集合
+
+#打印三次hello
+
+for i in range(3):  # 定義i，用於接收集合中的每一個元素，當接收一個元素時，就會執行一次
+    '''
+    i是一個變量 
+    i = 0
+    i = 1
+    i = 2
+    '''
+    print("hello")  # 循環體
+
+
+#小李超餓，要吃五個饅頭，顯示每次吃饅頭的過程，當小李吃完五個饅頭，顯示小李吃飽了
+
+for i in range(1, 6):
+    print("小李很餓，正在吃第{}個饅頭".format(i))
+print("小李說:\"終於吃飽了\"")
+
+'''
+吃饅頭，在第三個饅頭上加了"砒霜"
+當吃到了第三個饅頭的時候，提示:不要吃!有毒
+'''
+for i in range(1, 6):
+    if i == 3:
+        print("不要吃!有毒")
+        break #結束循環，else內部語句就不會被輸出
+    else:
+        print("小李很餓，正在吃第{}個饅頭".format(i))
+    
+'''
+用戶帳密登入只能登入三次，三次未成功則帳戶鎖定
+輸入正確就進入後台
+'''
+for i in range(1, 4):
+    inputlogin = input("請輸入帳號: ")
+    inputpass = input("請輸入密碼: ")
+    if inputpass == "admin" and inputlogin == "meow":
+        print("成功登入")
+        break
+    else:
+        print("請在輸入一次帳密")
+else:
+    print("帳號鎖定")
+    
+#pass空語句
+if 10 > 7:
+    print("結果正確!")
+
+else:
+   #正常來說如果這裡是空的，程序會報錯
+    pass #不會做任何事情，相當於代碼的佔位，保證代碼結構的完整性，在語     法上也不會報錯
+print("程序判斷成功")
+ ```
+
