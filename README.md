@@ -522,7 +522,7 @@ while i <= 9:
     # 內循環
     j = 1
     while j <= i:
-        print("{}*{} ={}\t".format(j, i, i * j), end="")
+        print("{}*{}={}".format(j, i, i * j), end="\t")
         j += 1
     print("")  # 什麼都不打印，但要換行
     i += 1
