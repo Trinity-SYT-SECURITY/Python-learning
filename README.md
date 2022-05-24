@@ -539,4 +539,58 @@ while i <= 9:
     e-->|false|g(i+1)
     g-->|回到外迴圈繼續執行|b
  ```
+ **字串**
+```python=
+string = "meow"
+for i in string:  # string 集合
+    print(i)
+print(string[0])  # 字串第0位的英文
+print(string.index("m"))#字串m在第幾位
 
+s1 = 'abc'
+s2 = "abc"
+s3 = '''abc'''#單行字串 不用使用三對引號表示
+
+#先比較三個字串的值
+print(s1 == s2) #true
+print(s2 == s3) #true
+print(s1 == s3) #true
+#比較id是否相同 通過自定義的字串 值相同的字串 他們id也是相同的
+print(id(1))
+print(id(2))
+print(id(3))
+
+str1 = input("請輸入信息: ") #輸入相同內容，比較兩個變量值和id是否相同
+str2 = input("請輸入信息: ") #程序每遇到一個input輸入，都會在內存裡開一個空間
+print(str1 == str2) #true
+print(str1 is str2) #false
+#當定義一個字串時 會在內存中開一個空間s1並指向那個空間 不過為了節約內存 會指向同個內存空間
+
+#字串的運算符: in成員運算符
+#沒連在一起的話就不是在集合中
+#'ste' in name?
+#'tv' in name?
+name =  "steven"
+result = 't' in name #返回值是bool 類型true false
+print(result)#true
+
+result = 'tv' not in name
+print(result)#true
+
+#切片
+         -->從左往右      從右往左<--
+正索引   0  1  2  3  4  5  6  7  8  9
+負索引 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1
+值       0  1  2  3  4  5  6  7  8  9
+       起點                        終點   
+#語法: str[start:end:方向(+-)/間隔]
+#切片使用索引值來限定範圍, 從一個大的字串中切出小的字串
+#列表和元組都是有序的集合 能夠通過索引值獲取對應的數據
+#字典是一個無序的集合 是使用鍵值對保存數據
+
+
+
+
+
+
+```
