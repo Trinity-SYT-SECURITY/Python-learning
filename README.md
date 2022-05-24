@@ -253,9 +253,88 @@ print(result) #11
 #code 縮排為一個tab或四個空白鍵
 #python規定: 判斷的變量是" "、0、 None默認是False，"meow"有值則認為是True
 
+#登入頁面
 username =  " " #默認表示False
 if username != " ":
 #if username: #username == False
     print("成功登入")
 print("下次再來")
+
+#小遊戲登入
+
+print("*0"*10+"歡迎新玩家"+"*"*10)
+level = input("請輸入當前級別(lv1、lv2)")
+if level == "lv1":
+    print("遊戲順利~")
+else:
+    print("請先充值")
+    money = int(input("請充值: "))
+    
+    #再增加一個判斷:充值金額是否是50的倍數: 是:遊戲繼續 否:重新充值
+    if money % 50 == 0:
+        print("充值金額是{}元\n祝你遊戲愉快".format(money))
+    else:
+        print("重新充值，金額有誤")
+       
+#else: 猜數字
+#產生一個隨機數
+#鍵盤輸入一個數字
+#將系統產生的數字和鍵盤輸入的數字做比較
+#猜對了:中獎、猜錯了:掰掰下次再來
+
+import random #亂數產生
+run = random.randint(1,10) #產生1~10內的亂數
+num = int(input("請輸入一個數字: "))
+
+if num == run:
+    print("猜中嘞")
+else:
+    print("猜錯嘞,再一次")
+print("數字是{}".format(run))
+
+#elif 多層條件判斷
+考試成績評測
+> 成績>=90 : A
+> 90>成績>=80 : B
+> 80>成績>=70 : C
+> 70>成績>=60 : D
+> 成績<60 :Ｅ
+
+while True:
+    score = input("輸入考試成績(1~100): ")
+    test = int(score)
+    if score.isdigit():
+        if 0 < test <= 100:
+            if test >= 90 and test >= 100:
+                print("A")
+                break
+            elif test >= 80:
+                print("B")
+                break
+            elif test >= 70:
+                print("C")
+                break
+            elif test >= 60:
+                print("D")
+                break
+            elif test < 60 and test >= 0:
+                print("E")
+                break
+            else:
+                print("請重新輸入正確數值")
+                continue
+        else:
+            print("請輸入1~100內的分數")
+
 ```
+    if 條件 1:
+        #條件1滿足執行的代碼
+        if 條件 1 基礎上的條件 2:
+            ...#條件 2 滿足執行的代碼
+        
+        else: #條件 2 不滿足的處理
+            條件 2 不滿足時，執行的代碼
+    else: #條件 1 不滿足的處理
+        條件 1 不滿足時，執行的代碼
+
+****
