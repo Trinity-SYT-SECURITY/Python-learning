@@ -343,6 +343,7 @@ while True:
 
 ```python=
 for循環作為編程語言最強力的特徵之一
+for循環較多用於次數可知情況下
 python可以使用for語句循環遍歷整個序列的值
 
     關鍵字 元素 關鍵字 集合
@@ -411,5 +412,34 @@ else:
    #正常來說如果這裡是空的，程序會報錯
     pass #不會做任何事情，相當於代碼的佔位，保證代碼結構的完整性，在語     法上也不會報錯
 print("程序判斷成功")
+
+#while較多用於次數未知情況下
+while True: #True循環條件
+    print("test")
+
+#死循環 當循環條件一直為true，就會一直執行循環:並且沒有一個機制可以打破循環
+
+#打印五遍meow
+#1.定義重複次數計數器
+i=0
+#2.使用while判斷條件
+while i < 5:
+    #需要執行代碼
+    print("meow")
+    #處理計數器i
+    i += 1
+print("循環結束後的i = %d" % i )
+
+# 不斷要求輸入學生姓名，輸入q結束
+#以list()函數建立一個空的串列，然後透過append()方法函數把資料項目加到某一個指定的串列中。
+allname = list() 
+name = input("輸入名字: ")
+while name != "q":
+    allname.append(name)#append把指定的資料項加到串列的最後端
+    name = input("輸入名字: ")
+    if name == "q":
+        print("程序結束")
+print("您輸入的名字有:", allname)
+    
  ```
 
