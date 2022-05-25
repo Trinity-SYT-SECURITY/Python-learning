@@ -578,19 +578,44 @@ result = 'tv' not in name
 print(result)#true
 
 #切片
+'''
          -->從左往右      從右往左<--
 正索引   0  1  2  3  4  5  6  7  8  9
 負索引 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1
 值       0  1  2  3  4  5  6  7  8  9
-       起點                        終點   
+       起點                        終點 
+'''
 #語法: str[start:end:方向(+-)/間隔]
 #切片使用索引值來限定範圍, 從一個大的字串中切出小的字串
 #列表和元組都是有序的集合 能夠通過索引值獲取對應的數據
 #字典是一個無序的集合 是使用鍵值對保存數據
+#起始值:終止值 默認間隔為1
 
 
+#取出字串中的文字
+filename = 'picture.png'
+print(filename[5])#r
+#通過[]可以結合位置/(下標或索引)獲取字符,特點:只能獲取一個字母
+filename = 'picture.png'
+print(filename[0:5])#pictu 0是起始值 5是結束的值,但是不包括[5] 包前不包後
+print(filename[3:5])#tu
+print(filename[3:]) #ture.png 只要省略後面，表示取值一直取到字串的末尾 
+print(filename[:7]) #picture 省略的是前面，從0開始取值，一直取到結束(不包含)
 
+print(filename[:]) #picture.png省略了首尾，相當於取了整個字串
 
+#集合有兩套 索引 起始或結束值出現負數的情況
+print(filename[8:-1]) #pn -1是從右往左取
+print(filename[:-2]) #picture.p 等價於 print(filename[:9])
+print(filename[-8:]) #ture.png
+
+#間隔 +- 1
+print(filename[::]) #picture.png
+print(filename[::-1])#gnp.erutcip 間隔的負號表示取值的方向
+
+str1 = "abcdefg"
+print(str[-1:-5]) #從後往前取值，但是取值的方向和間隔的方向不一致，導致不會輸出結果
+print(str[-1:-5:-1]) #gfed
 
 
 ```
