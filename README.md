@@ -618,4 +618,61 @@ print(str[-1:-5]) #從後往前取值，但是取值的方向和間隔的方向�
 print(str[-1:-5:-1]) #gfed
 
 
+#大小寫切換
+massage = "love meow meow"
+msg = massage.capitalize()
+print(msg)  # 首字大寫 Love meow meow
+
+msg = massage.title()
+print(msg)  # 每個單詞字母首位大寫 Love Meow Meow
+
+result = msg.istitle()
+print(result)  # 是否是title形式 True
+
+msg = massage.upper()
+print(msg)  # 每個字母大寫 LOVE MEOW MEOW
+
+msg = massage.lower()
+print(msg) #全字母小寫 love meow meow
+
+#根據系統提示輸入驗證碼，不用考慮大小寫
+import random
+s = 'QERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890'
+# print(len(s))  # 61
+# print(s[1])
+code = ""  # 來接受隨機生成的字串
+for i in range(4):
+    # random(0,61) 隨機取0~61中的字串值 len是從1開始所以要減1
+    ran = random.randint(0, len(s) - 1)
+    code += s[ran]  # code 使用 + 進行字串拼接 + s[隨機數]
+
+print("驗證碼是: {}".format(code))
+
+# 提示用戶輸入驗證碼(輸入時忽略大小寫)
+userinput = input("請輸入驗證碼: ")
+if userinput.lower() == code.lower():  # .lower忽略大小寫
+    print("驗證碼正確")
+
+else:
+    print("驗證碼有誤")
+
+#字符串內鍵函數查找,替換
+#find() rfind() lfind() #查找
+#replace #替換
+
+#find(str, beg=0 ,end=len(string)) #find(要查找字串,start,end)
+#檢測str是否包含在字串中，如果指定範圍beg和end，則檢查是否包含在指定範圍內，如果包含返回開始的索引值，否則返回-1
+s1 = "lucky meow meow"
+position = s1.find("R")  # 返回值是-1,則表示沒找到 -1
+print(position)
+
+position = s1.find("l")  # 可以找到，返回字母第一次出現的位置 0
+print(position)
+
+p = s1.find("l", position + 1, len(s1) - 5)  # 指定位置查找,position+1,表示尋找第2個"l" -1
+print(p)
+
+
+
+
 ```
