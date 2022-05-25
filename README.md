@@ -792,7 +792,7 @@ print(result) #['hello', 'meow', 'no world']
 s = "sakkytrvbofhplkjhctdtyikjhdfgsaqhfn"
 n = s.count('s')
 print(n)#2
-
-
 ```
+
+**列表**
 
