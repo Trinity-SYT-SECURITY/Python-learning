@@ -669,10 +669,130 @@ print(position)
 position = s1.find("l")  # 可以找到，返回字母第一次出現的位置 0
 print(position)
 
-p = s1.find("l", position + 1, len(s1) - 5)  # 指定位置查找,position+1,表示尋找第2個"l" -1
+p = s1.find("l", position + 1, len(s1) - 5)  # 指定位置查找,position+1,表示再次在字串中尋找第2個"l" -1
 print(p)
 
+url = "https://www.meow.com/img/bd_logo1.png"
+# 獲取最右邊"/"位置
+p = url.rfind('/')
+print(p) #24
 
+# 獲取最右邊"/"文件名
+filename = url[p + 1:]
+print(filename)#bd_logo1.png
+
+# 擷取擴展名
+p = url.rfind(".")
+kz = url[p+1:]
+print(kz)#png
+
+#replace(old,new[,max])
+#將字串中的str1替換成str2,如果max指定,則替換不超過max次
+
+s1 = "meow hacker lucky"
+#將s1字串空格的部分替換#
+s2 = s1.replace(" ","#")
+print(s2)#meow#hacker#lucky
+
+#去除s1中的空格
+s2 = s1.replace(" ","")
+print(s2)#meowhackerlucky
+
+#字串編碼和判斷開頭結尾
+#encode() 編碼
+#encode(encoding='UTF-8',errors='strict')
+'''
+以encoding指定的編碼格式編碼字串
+如果出錯默認報一個ValueError的異常，除非error指定的是'ignore'或'replace'
+'''
+msg = "我只會meow"
+result = msg.encode(encoding="UTF-8")
+print(result)
+#b'\xe6\x88\x91\xe5\x8f\xaa\xe6\x9c\x83meow'
+
+#解碼decode()
+m = result.decode("utf-8")
+print(m)#我只會meow
+
+
+#判斷開頭結尾
+#startswith()
+#endswith()  #返回值都是bool類型true false
+#startswith  #判斷是否以xx開頭，endswith判斷是否以xxx結尾
+
+'''
+給定一個路徑，上傳文件(記事本txt或是圖片jpg.png)
+如果不是對應格式的，允許重新執行上傳文件
+如果符合上傳的規定則提示上傳成功
+'''
+while True:
+    path = input("選擇文件上傳: ")
+#要上傳的文件路徑 -->文件名 -->通過文件名再判斷是否是圖片類型
+    p = path.rfind("\\")
+    filename = path[p + 1:] #通過切片，截取出來文件名
+#判斷是否是圖片類型
+    if filename.endswith("jpg") or filename.endswith("png") or filename.endswith("txt"):
+        print("是圖片，上傳成功")
+        break
+    else:
+        print("不是圖片格式和記事本格式，上傳錯誤")
+    
+# isalpha()是否是字母
+# isdigit()是否是數字
+s = "abcd"
+result = s.isalpha()
+print("result=", result)#result= True
+
+s = "6688"
+result = s.isdigit()
+print(result)#True
+
+#判斷輸入的是否是純數字，並計算出純數字的和
+sum = 0
+i = 1
+while i <= 3:
+    num = input("請輸入數字: ")
+    if num.isdigit():
+        num = int(num)
+        sum += num
+        print("第{}個數字累加成功! ".format(i))
+        i += 1
+    else:
+        print("不是數字")
+print("sum=", sum)
+
+#join split count 字符串作為分隔符號，將seq中所有的元素(的字符串表示)合併為一個新的字串
+"""
+join(seq)以指定字串作為分隔符號，將seq中所有的元素(字串表示)合併為一個新的字串
+"""
+#將字串abc用_連接，構成一個新的字串
+new_str = "_".join("abc")
+print(new_str)#a_b_c
+
+#去除字串的空格 strip lstrip rstrip
+#split() 分割字串，將切割後的字串保存到列表中
+
+#split 分割字串，將切割後的字串保存到列表中
+"""
+split(str="",num=string.count(str))
+num=string.count(str) 以str為分隔符截取字串，如果num有指定值，則僅截取num+1個字串
+"""
+#split()分割字串，將切割後的字串保存到列表中
+s = "hello meow no world"
+result = s.split(" ")  # 遇到空格就切一刀，最後生成一個列表
+print(result) #['hello', 'meow', 'no', 'world']
+
+result = s.split(" ", 2)  # 按照接觸空格作為分割符號，分割字串2次
+print(result) #['hello', 'meow', 'no world']
+
+#n = s.count(" ") #count(args) 求字符串中指定args的個數
+#print("個數",n)
+
+#求字串's'的個數
+s = "sakkytrvbofhplkjhctdtyikjhdfgsaqhfn"
+n = s.count('s')
+print(n)#2
 
 
 ```
+
