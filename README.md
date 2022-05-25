@@ -815,7 +815,114 @@ name_list[3]
 
 IndexError: list index out of range
 '''
+'''
 name_list = [] #空列表
-name_list.
+name_list.insert(索引,數據) #在指定位置插入數據
+name_list.append(數據) #在末尾追加數據
+name_list.extend(列表2) #將列表2的數據追加到列表
+name_list[索引] = 數據 #修改指定索引的數據
+name_list.remove[數據] #刪除第一個出現的指定數據
+name_list.pop #刪除末尾數據
+name_list.pop(索引) #刪除指定索引數據
+name_list.clear #清空列表
+name_list.count(數據) #數據在列表衝出現的次數
+name_list.sort() #升序排列
+name_list.sort(reverse=True) #降序排列
+name_list.reverse() #逆序、反轉
+name_list.index
+'''
 
+name_list = ["meow", "haha", "hacking"]
+print(name_list[0]) #meow
+print(name_list.index("haha")) #1
+
+
+#修改元素
+name_list = ["meow", "haha", "hacking"]
+name_list[1] = "hackmeow"
+print(name_list) #['meow', 'hackmeow', 'hacking']
+
+#增加數據 append(數據)/+ 會被追加到列表的末尾
+name_list = ["meow", "haha", "hacking"]
+name_list.append("lucky")
+name_list.append("haha")#列表允許重複元素存在
+result = name_list + ["NO"]
+print(name_list) #['meow', 'haha', 'hacking', 'lucky']
+print(result) #['meow', 'haha', 'hacking', 'lucky', 'NO']
+
+#insert(索引,數據)
+name_list = ["meow", "haha", "hacking"]
+name_list.append("lucky")
+name_list.append("haha") 
+name_list.insert(2, "meowmeowQAQ")
+print(name_list)#['meow', 'haha', 'meowmeowQAQ', 'hacking', 'lucky', 'haha']
+
+#extend() 擴展 + 
+name_list = ["meow", "haha", "hacking"]
+
+name_list1 = ["小紅", "小白", "小黑"]
+name_list.extend(name_list1)#['meow', 'haha', 'hacking', '小紅', '小白', '小黑']
+result = name_list1 + name_list
+print(name_list)  # ['meow', 'haha', 'hacking', '小紅', '小白', '小黑']
+print(result)
+
+# 移除列表中元素
+print(name_list)  # ['meow', 'haha', 'hacking', '小紅', '小白', '小黑']
+name_list.remove("meow")
+print(name_list)  # ['haha', 'hacking', '小紅', '小白', '小黑']
+
+# pop() 默認移除列表最後一個元素，()裡面加上元素的索引,來移除這個元素
+name_list.pop()
+print(name_list)  # ['haha', 'hacking', '小紅', '小白']
+name_list.pop(0)
+print(name_list)  # ['hacking', '小紅', '小白']
+
+#len() 用來表示集合的長度/裡面有多少個元素 length
+print(len(name_list)) #3
+
+# del + 列表[索引值]
+del name_list[0]
+print(name_list) #['小紅', '小白']
+
+# clear() 清除列表
+name_list.clear()
+print(name_list)  # []
+
+#count() 統計元素出現的次數
+num_list = [1, 0, 2, 3, 2, 4, 7, 5, 6, 3, 1, 7, 8, 9]
+num_list = num_list.count(1)
+print(num_list) # 2
+
+#sort() 升序 由小而大排列
+num_list = [1, 0, 2, 3, 2, 4, 7, 5, 6, 3, 1, 7, 8, 9]
+num_list.sort()
+print(num_list)  # [0, 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 7, 8, 9]
+
+num_list.sort(reverse=False)
+print(num_list)  # [0, 1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 7, 8, 9]
+num_list.sort(reverse=True)
+#在升序的基礎上倒序
+print(num_list) # [9, 8, 7, 7, 6, 5, 4, 3, 3, 2, 2, 1, 1, 0]
+
+#reverse直接逆序輸出
+num_list1 = [1, 6, 4, 8, 3, 2, 9, 2]
+num_list1.reverse()
+print(num_list1) # [2, 9, 2, 3, 8, 4, 6, 1]
+```
+
+**循環遍歷**
++ 從頭到尾一次從列表中獲取數據
++ 使用for就能實現迭代遍歷
+```python=
+#for 循環內部使用的變量 in 列表
+name_list = ["meow", "haha", "hacking"]
+
+for name in name_list:
+    #循環內部針對使用的變量in列表
+    print(name)
+'''
+meow
+haha
+hacking
+'''
 ```
