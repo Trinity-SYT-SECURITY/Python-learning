@@ -795,4 +795,27 @@ print(n)#2
 ```
 
 **列表**
++ list 用於儲存一串訊息，同時定義多個同類型的變量
++ 列表用[]定義，數據之間用 , 分隔
++ 列表的索引從0開始
++ 從列表中取值時，如果超出索引範圍，就會報錯
+num_list = [1,2,3,4,5,6,7,8,9]
+當寫了上面一行代碼之後，就在內存中開了個連續的10塊空間
+每一塊空間都稱為這個列表的元素
 
+```python=
+#              0       1       2
+name_list = ["meow","haha","hacking"]
+name_list[1] #haha
+name_list[2] #hacking
+name_list[3] 
+'''
+<ipython-input-4-ce8c9d9aa7dd> in <module>
+----> 1 name_list[3]
+
+IndexError: list index out of range
+'''
+name_list = [] #空列表
+name_list.
+
+```
