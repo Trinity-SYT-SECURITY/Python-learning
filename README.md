@@ -529,7 +529,7 @@ while i <= 9:
  ```
  ```mermaid
  flowchart LR
-    a(i+1)-->b{i<=9}
+    a(i=1)-->b{i<=9}
     b-->|false|c(停止運行)
     b-->|true 進入內迴圈|d(j=1)
     direction BT
