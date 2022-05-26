@@ -1223,11 +1223,29 @@ print(dict1)#{'老李': 100, '老皮': 45, '李四': 66}
 
 #popitem():隨機刪除字典中鍵值對(一般是末尾刪除)
 
-dict1 ={"老李": 100, "老王": 33, "老六": 83, "老皮": 45, "李四": 66}
+dict1 = {"老李": 100, "老王": 33, "老六": 83, "老皮": 45, "李四": 66}
+result = dict1.popitem()
+print(result)  # ('李四', 66)
+print(dict1)  # {'老李': 100, '老王': 33, '老六': 83, '老皮': 45}
 
+# clear() 同列表的clear
+dict1.clear()
+print(dict1)#{}
 
+#update() 合併操作 相當於列表中的extend()
+dict1 = {0: "tom", 1: "jack", 2: "lucy"}
+dict2 = {0: "meme", "4": "meow"}
+dict1.update(dict2)
+print(dict1)#{0: 'meme', 1: 'jack', 2: 'lucy', '4': 'meow'}
 
+#fromkeys(seq, [])
+#將seq轉成字典的形式，如果沒有指定默認的value,則用none
+list1 = ['aa', 'bb', 'cc']
+newdict = dict.fromkeys(list1, 100)
+newdict2 = dict.fromkeys(list1)
 
+print(newdict)  # {'aa': 100, 'bb': 100, 'cc': 100}
+print(newdict2) # {'aa': None, 'bb': None, 'cc': None}
 
 
 
