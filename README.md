@@ -1037,4 +1037,202 @@ print(3 not in t3) #False
 
 ```
 **字典**
++ 除列表之外python之中最靈活的數據類型
++ 可存儲多個數據
++ 列表是有序的對象集合
++ 字典是無序的對象集合
++ 字典用{}定義
+
+```python=
+dict1 = {} #定義一個空字典
+dict2 = dict() #定義一個空字典
+'''
+字典使用鍵值對存儲數據 鍵值對之間使用 , 分隔
+鍵 key 是索引
+值 value 是數據
+鍵 和 值之間使用 : 分隔
+鍵必須是唯一
+值 可以取任何數據類型，但鍵只能使用 字串 數字 或是 元組
+'''
+
+tom = {
+    "name": "tom",
+    "age": 18,
+    "height": 1.75,
+    "weight": 75}
+print(tom)  # {'name': 'tom', 'age': 18, 'height': 1.75, 'weight': 75}
+
+#將列表硬轉成字典，這個列表的每個元素都是元組，每個元組有兩個元素
+#只有符合固定格式的寫法才能轉換成字典
+
+dict4 = dict([("name", "lucy"), ("age", 18)])
+# dict5 = dict([(1, 2, 3), (4, 5), (6, 7)])  # 不符合字典格式是錯誤的定義
+print(dict4)  # {'name': 'lucy', 'age': 18}
+
+dict4 = dict((["name", "lucy"], ["age", 18]))
+print(dict4)  # {'name': 'lucy', 'age': 18}
+
+tuples1 = ("name", "meow")
+# dict3 = dict(tuples1) #報錯
+dict4 = dict([("name", "meow")])  # 每隔元素要成對出現
+print(dict4)  # {'name': 'meow'}
+
+# 要想把列表、元組都轉換成一個字典
+# dict() 內部以一個集合的形式出現，這個集合的元素要成對出現 ==> 成對 這兩個元素也要組成一個列表或元組
+
+# dict4 = dict(((1, 2, 6), (3, 4))) #不成對出現 會報錯
+dict4 = dict(((1, 2), (3, 4)))
+print(dict4)#{1: 2, 3: 4}
+
+#字典的增刪改查-增加
+dict6 = {}
+dict6 = {"meow": "hacking"}
+print(dict6)  #{'meow': 'hacking'}
+
+#格式: dict6[key] = value
+# 特點: 按照上面的格式，如果在字典中存在同名的key，則發生值的覆蓋(後面的值覆蓋原來的值)
+# KEY是唯一的 value可以是不唯一的
+dict6['meow'] = 'hacker'
+dict6['meow'] = "haha"
+
+# 增加
+dict6["type"] = "meowmeow book"
+dict6["price"] = 1000
+dict6["color"] = "black"
+print(dict6) #{'meow': 'haha', 'type': 'meowmeow book', 'price': 1000, 'color': 'black'}
+
+
+#用戶註冊功能，用戶填寫如下信息，完成用戶註冊
+#username
+#password
+#email
+#phone
+
+import sys
+
+print("*"*10+"歡迎使用meowmeow用戶註冊功能"+"*"*10)
+database = []  # 定義列表用來存儲多個用戶生成的字典
+
+while True:
+    username = input("請輸入使用者名稱: ")
+    password = input("請輸入密碼: ")
+    repasswd = input("請再次輸入密碼: ")
+    email = input("請輸入email: ")
+    phone = input("請輸入手機號碼: ")
+
+    user = {}
+    # 將信息保存到字典
+    user["username"] = username
+
+    while phone.isdigit() == False or len(phone) != 9:
+        print("手機號碼格式有錯(EX:123456789)，請重新輸入")
+        phone = input("請輸入手機號碼: ")
+
+    while '@' not in email or '.com' not in email == False:
+        print("Email格式有誤，請重新輸入")
+        email = input("請輸入email: ")
+
+    i = 0
+    while i < 3:
+        if password == repasswd:
+            user["password"] = password
+            break
+        else:
+            print("兩次密碼不一致!請重輸入")
+            repasswd = input("請再次輸入密碼: ")
+            i += 1
+        if i >= 3:
+            sys.exit("帳號鎖定，請等幾分鐘後重新註冊")
+
+    user["email"] = email
+    user["phone"] = phone
+    # 將信息保存到資料庫
+    database.append(user)
+
+    ans = input("資料無誤，是否繼續註冊? (y/n)")
+    if ans != "y":
+        break
+
+print(database)
+
+#字典的增刪改查-查詢字典內元素
+# 字典中根據KEY查找
+dict1 = {"1": "老六", "2": "老李", "3": "老王"}
+print(dict1)  # {'1': '老六', '2': '老李', '3': '老王'}
+
+dict1 = {"老李": 100, "老王": 33, "老六": 83}
+print(dict1["老六"])  # 取值 83
+
+# items() #把字典轉換成列表的形式，元素是元組
+print(dict1.items())  #dict_items([('老李', 100), ('老王', 33), ('老六', 83)])
+
+# print(dict1.items())
+# #dict_items([('老李', 100), ('老王', 33), ('老六', 83)])
+
+for key, value in dict1.items():
+    if value > 90:
+        print(key, value)  # 老李 100
+
+
+result = dict1.values()
+print(result)  # dict_values([100, 33, 83])
+
+# 求所有考生平均分
+for score in dict1.values():
+    print(score)  # 100 33 83
+score = dict1.values()
+total = sum(score)  # 216
+avg = total / len(score)  # 216 / 3
+print(avg)#72.0
+
+# Keys() 取出字典中所有的鍵 生成一個列表
+names = dict1.keys()
+print(names)  # dict_keys(['老李', '老王', '老六'])
+print(type(names))  # <class 'dict_keys'>
+for name in names:
+    print(name)
+'''
+老李
+老王
+老六
+'''
+
+#字典的增刪改查-刪除
+#del 關鍵字
+#若刪除不存在的元素會報錯
+
+list1 = [3, 5, 6, 8]
+del list1[1]
+print(list1)#[3, 6, 8]
+
+dict1 = {"老李": 100, "老王": 33, "老六": 83, "老皮": 45, "李四": 66}
+del dict1["老王"]
+print(dict1)#{'老李': 100, '老六': 83, '老皮': 45, '李四': 66}
+
+#字典內置函數: 刪除
+# pop(key[,default])
+dict1.pop("老六")
+print(dict1)#{'老李': 100, '老皮': 45, '李四': 66}
+#根據KEY刪除字典中的鍵值對，返回的只要刪除成果，則返回鍵值對的值value
+#pop的默認值往往實際刪除的時候沒有找到對應的key，則返回默認
+
+#默認值 用於在找時 如果沒找到 用來提示結果
+result = dict1.pop("喵喵?", "為何沒喵喵")
+print(result)  # 為何沒喵喵
+print(dict1)#{'老李': 100, '老皮': 45, '李四': 66}
+
+#popitem():隨機刪除字典中鍵值對(一般是末尾刪除)
+
+dict1 ={"老李": 100, "老王": 33, "老六": 83, "老皮": 45, "李四": 66}
+
+
+
+
+
+
+
+
+
+```
+
 
