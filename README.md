@@ -1421,14 +1421,20 @@ set7 = set1.union(set2)
 print(set6) #{1, 2, 3, 4, 5, 6, 7, 8}
 print(set7) #{1, 2, 3, 4, 5, 6, 7, 8}
 
-#對稱差集 包含s1 和 s2 不相同的元素 XOR
+#對稱差集 包含s1 和 s2 不相同的元素 XOR ^ symmetric_difference
 result = (set1|set2) - (set1&set2)
 print(result) #{1, 2, 3, 6, 7, 8}
 
+result =set1 ^ set2
+print(result) #{1, 2, 3, 6, 7, 8}
 
+result = set1.symmetric_difference(set2)
+print(result) #{1, 2, 3, 6, 7, 8}
 
-
+set1.symmetric_difference_update(set2) #包含_update 直接把調用者的直進行更新 成為 前面方法(symmetric_difference_update)的結果
+print(set1)
 
 ```
-
-
+**可變和不可變類型**
+不可變類型: 對象指向內存中的值不可以改變
+![image](https://user-images.githubusercontent.com/96654161/170818353-5fabfa30-97c1-40b6-9437-29e26256b271.png)
