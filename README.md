@@ -1332,6 +1332,48 @@ s1.clear()
 print(s1)
 
 
+"""
+1.產生10個 1-20的隨機數 去除裡面的重複項
+2.鍵盤輸入一個元素，將這個元素從不重複的集合中刪除
+"""
+
+import random
+
+from numpy import setxor1d
+
+list1 = []
+
+# 產生10個隨機數，就是列表的10個元素
+for i in range(10):
+    ran = random.randint(1, 20)
+    list1.append(ran)
+
+# 通過集合去重
+print(list1)  # [1, 12, 11, 8, 19, 15, 14, 2, 2, 4]
+set1 = set(list1)
+print(set1)  # {1, 2, 4, 8, 11, 12, 14, 15, 19}
+
+# 鍵盤輸入一個元素，將這個元素從不重複的集合裡面刪除
+num1 = int(input(" 輸入一個數字: "))  # 輸入一個數字: 1
+set1.discard(num1)
+print(set1)  # {2, 4, 8, 11, 12, 14, 15, 19}
+
+
+print("*"*20+"方法2"+"*"*20)
+# 方法2
+set2 = set()
+for i in range(10):
+    ran = random.randint(1, 20)
+    set2.add(ran)
+print(set2)  # {2, 3, 6, 7, 10, 13, 14, 15, 17, 19}
+
+# 鍵盤輸入一個元素，將這個元素從不重複的集合裡面刪除
+num1 = int(input(" 輸入一個數字: "))  # 輸入一個數字: 3
+set2.discard(num1)
+print(set2)  # {2, 6, 7, 10, 13, 14, 15, 17, 19}
+
+
+
 ```
 
 
