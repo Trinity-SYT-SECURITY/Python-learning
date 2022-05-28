@@ -1,4 +1,4 @@
-## Python 小科普
+
 
 **變數**
 + 標示符 => 自定義變量名稱 ，不可以數字開頭
@@ -629,8 +629,7 @@ result = msg.istitle()
 print(result)  # 是否是title形式 True
 
 msg = massage.upper()
-print(msg)  # 每個字母大寫 LOVE MEOW MEOW
-
+print(msg)  # 每個字母大寫 LOVE 
 msg = massage.lower()
 print(msg) #全字母小寫 love meow meow
 
@@ -953,6 +952,21 @@ tuple1 = tuple(list_1)#把列表轉換成元組
 
 list_1 = list(tuple1)#把元組轉換列表
 
+#tuple ，用小括號表示 。
+#例如 (‘a’, ‘b’)。
+
+score = ('A+',)
+print(score) #('A+',)
+print(type(score))  #<class 'tuple'>
+
+#tuple屬於不可變的資料型態，不可變（Immutable）意思就是你不可以修改、增減tuple的值。也因為 tuple 不可變的特性，所以沒有append()、remove()、pop()等會更動值的操作。
+#只含有一個項目時，要加上逗點當你要建立只有一個項目的 tuple，千萬要記得加上逗號，否則不會建立 tuple。
+number = 1,
+print(number) #(1,)
+
+
+
+
 #取值 元組也是一個有序的集合
 #查詢下標index來取值 切片的取值[::]
 #關於元組的函數和方法
@@ -1247,8 +1261,75 @@ newdict2 = dict.fromkeys(list1)
 print(newdict)  # {'aa': 100, 'bb': 100, 'cc': 100}
 print(newdict2) # {'aa': None, 'bb': None, 'cc': None}
 
+```
+
+**集合**
+某些指定的對象集在一起就成為一個集合，其中每一個對象叫元素
+
+格式: 集合名 = {元素1, 元素2, ...}
+
+關鍵字 : set()
+
+例: my_set = {1,3,5}
+
++ 集合是無序的 -> 不支持下標索引
++ 集合是可辨的數據類型
++ 集合中的元素是唯一的
+
+`集合一般用於元組或是列表中的元素去重複`
+
+定義一個空的集合 my_set = set()
+
+`my_set = {}這寫法是一個空字典`
+
+`集合輸出結果是不會按照順序輸出，是隨機的`
+
+```python=
+#定義一個集合
+s1 = set() #空集合
+s2 = {1,2,4,5} #有元素的集合表示方法
+print(type(s1,s2)) # <class 'set'> <class 'set'>
+
+#增加元素 .add 增加一個元素:元素的類型 可以是一個單個的元素，也可以把元組作為一個元素
+s1.add('hi')
+s1.add('meow')
+print(s1)  #{'hi', 'meow'}
+
+#update()可以添加多個元素 把其他集合增加進來
+
+t1 = ('老王', '老李')
+s1.update(t1)
+print(s1)  #{'老李', 'hi', '老王', 'meow'}
 
 
+s1.add(t1)#t1為一個元素被添加進集合
+t1 = ("老王","meow","老李")
+l1 = ["阿甘","丹丹"]
+s1.update(t1)
+s1.add(t1)  #.add可以增加一個元組 作為集合的一個元素
+print(s1)  #{'老李', '老王', 'hi', 'meow', ('老王', 'meow', '老李')}
+
+# 刪除元素 remove pop clear del
+s1.remove("老王")  # 使用remove刪除一個集合裡面的元素
+# s1.remove("hack")  # 刪除集合中不存在元素...會報錯
+print(s1)  # {'老李', 'meow', 'hi', ('老王', 'meow', '老李')}
+
+
+# pop 隨機刪除集合中元素
+s1.pop()
+print(s1)  # {'meow', 'hi', '老李'}
+
+# del
+# del s1 #不能刪除集合裡面的單個元素 能刪除整個集合
+
+# discard 丟棄 能夠移除 集合中不存在的元素 也能移除不存在元素 並且不會報錯
+s1.discard("meow")
+print(s1)
+
+
+# clear 清除所有元素
+s1.clear()
+print(s1)
 
 
 ```
