@@ -1402,8 +1402,29 @@ print(set4) # {8, 6, 7}
 print(6 not in set2) #False 
 
 #交集"&"和併集"|"
+
+# & ==> intersection() 
+#共同擁有
 set1 = {1,2,3,4,5}
 set2 = {4,5,6,7,8}
+set5 = set1 & set2
+set6 = set1.intersection(set2)
+print(set5) #{4, 5}
+print(set6) #{4, 5}
+
+# | 求兩個集合中都擁有的並去除重複
+#union() 聯合
+set1 = {1,2,3,4,5}
+set2 = {4,5,6,7,8}
+set6 = set1 | set2
+set7 = set1.union(set2)
+print(set6) #{1, 2, 3, 4, 5, 6, 7, 8}
+print(set7) #{1, 2, 3, 4, 5, 6, 7, 8}
+
+#對稱差集 包含s1 和 s2 不相同的元素 XOR
+result = (set1|set2) - (set1&set2)
+print(result) #{1, 2, 3, 6, 7, 8}
+
 
 
 
