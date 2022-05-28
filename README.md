@@ -1372,6 +1372,40 @@ num1 = int(input(" 輸入一個數字: "))  # 輸入一個數字: 3
 set2.discard(num1)
 print(set2)  # {2, 6, 7, 10, 13, 14, 15, 17, 19}
 
+#其他符號 + * 
+'''
+set1 = {1,2,3,4,5}
+set2 = {4,5,6,7,8}
+
+set3 = set1 + set2
+set4 = set1 * 2 集合去重，所以乘號不適用在此
+print(set3)
+加號與乘號不適用於集合中
+'''
+# - 差集 ===> .difference()
+set1 = {1,2,3,4,5}
+set2 = {4,5,6,7,8}
+
+set3 = set1 - set2
+print(set3) #{1, 2, 3}
+set4 = set2 - set1
+print(set4) # {8, 6, 7}
+set3 = set1.difference(set2) 
+print(set3) #{1, 2, 3}
+set4 = set2.difference(set1) 
+print(set4) # {8, 6, 7}
+
+#{1,2,3} \ {2,3,4} = {1}
+#{2,3,4} \ {1,2,3} = {4}
+
+# in  not in成員運算符 會返回bool類型
+print(6 not in set2) #False 
+
+#交集"&"和併集"|"
+set1 = {1,2,3,4,5}
+set2 = {4,5,6,7,8}
+
+
 
 
 ```
