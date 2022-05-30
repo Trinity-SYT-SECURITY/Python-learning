@@ -1437,6 +1437,108 @@ print(set1)
 ```
 **可變和不可變類型**
 不可變類型: 對象指向內存中的值不可以改變
-`除了int`
+`除了int float str tuple`
 ![image](https://user-images.githubusercontent.com/96654161/170818353-5fabfa30-97c1-40b6-9437-29e26256b271.png)
+
+```python=
+str1 = "hello"
+str2 = "meow"
+print(id(str1))#2249124151856
+str1 = "hello_world"
+str1 += str2
+print(id(str1))#2249124152240
+```
+`指向相同id裡面的值不可變`
+
+可變類型
+
+```python=
+list1 = [1, 2, 3, 4, 5, 6]
+list2 = [4, 5, 6]
+print("list1", id(list1))#list1 3094500793216
+
+list1 += list2
+print(list1)#[1, 2, 3, 4, 5, 6, 4, 5, 6]
+
+print("list1 -->", id(list1))#list1 --> 3094500793216
+
+dict1 = {1: "a", 2: "b"}
+print(dict1)#{1: 'a', 2: 'b'}
+print(id(dict1))#1876348750016
+
+dict1[3] = "dd"
+print(dict1)#{1: 'a', 2: 'b', 3: 'dd'}
+print(id(dict1))#1876348750016
+```
+`保證id不變的情況下在相同的空間加值且空間的值可以變化的`
+
+字符串和其他類型
+```python=
+#str 轉 int list tuple set // dict
+str1 = "12345678"
+n1 = int(str1)
+print(n1)#12345678
+
+l1 = list(str1)
+print(l1)#['1', '2', '3', '4', '5', '6', '7', '8']
+
+s1 = set(str1)
+print(s1)#{'4', '3', '1', '7', '5', '6', '8', '2'}
+
+dict1 = dict([("1", "2")])
+print(dict1)#{'1': '2'}
+```
+
+反過來 其他類型轉字串 int float list tuple dict
+```python=
+list2 = [2, 3, 4, 5, 6, 7, 8]
+str2 = str(list2)
+print(str2)  # "[2, 3, 4, 5, 6, 7, 8]"
+
+dict2 = {"a": "A"}
+str2 = str(dict2)#'[2, 3, 4, 5, 6, 7, 8]'
+print(str2)#"{'a': 'A'}"
+```
+
+其他容器之間的類型轉換
+list 轉 set() tuple() 轉 字典[(key,value),(key,value)....(key,value)]
+
+字典轉列表
+```python=
+dict3 = {1: "a", 2: "b", 3: "v"}
+list3 = list(dict3)
+print(list3)#[1, 2, 3] 字典轉列表 只是把字典的鍵 保存在列表中
+```
+
+```python=
+# str() -> int() list() set() tuple()
+
+str1 = "meow"
+# 轉成列表
+strlist = list(str1)
+print(strlist)#['m', 'e', 'o', 'w']
+
+# 轉成元組
+strtuple = tuple(str1)
+print(strtuple)#('m', 'e', 'o', 'w')
+
+# 轉成集合 去重操作
+strset = set(str1)
+print(strset)#{'m', 'e', 'o', 'w'}
+
+# 轉成整形
+strint = "12567890"
+strnum = int(strint)
+print(strnum)#12567890
+
+# 轉成浮點數
+str2 = "3.5343"
+strfloat = float(str2)
+print(str2)#3.5343
+
+```
+
+
+
+
 
