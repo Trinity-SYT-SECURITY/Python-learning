@@ -1437,5 +1437,6 @@ print(set1)
 ```
 **可變和不可變類型**
 不可變類型: 對象指向內存中的值不可以改變
+`除了int`
 ![image](https://user-images.githubusercontent.com/96654161/170818353-5fabfa30-97c1-40b6-9437-29e26256b271.png)
 
