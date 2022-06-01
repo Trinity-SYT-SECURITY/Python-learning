@@ -1589,16 +1589,17 @@ test.meow()
 **函數參數**
 開發一個sum_num的函數，函數可以實現兩個數字的求和功能
 ```python=
-def sum_num(num1, num2):  # 形參
+def sum_num(num1, num2):  # 形參，用來接收參數
     """計算兩數和"""
 
     result = num1 + num2
 
-    print("%d+%d=%d" % (num1, num2, num1+num2))
+    print("%d+%d=%d" % (num1, num2, result))
     print(id(num1))
     print(id(num2))
 
 sum_num(100, 200)  # 實參 調用函數計算100和200 在不對函數內的程式進行更動的情況下
+#把數據傳遞到函數內部
 # 100+200=300
 # 在傳遞參數的過程中，實際上傳遞的是實參引用(id)
 
@@ -1609,4 +1610,24 @@ print(id(sum_num(1, 2)))
 ```
 ![image](https://user-images.githubusercontent.com/96654161/171445979-54b02402-1729-4759-bcd1-9816132398e7.png)
 
+參數的作用
++ 在函數內部，把參數當作變量使用，進行需要的數據處理
++ 函數調用時，按照函數定義的參數順序，把希望在函數內部處理的數據通過參數傳遞
 
+**函數嵌套調用**
++ 一個函數裡面又調用另外一個函數
+```python=
+def test1():
+    print("#"*20)
+    print("test1")
+    print("#"*20)
+
+def test2():
+    print("-"*20)
+    print("test2")
+
+    test1()  # 函數嵌套調用 調用已經封裝好的程式
+    print("-"*20)
+
+test2() #程式最先從這執行 在進入test2函數後再調用test1
+```
