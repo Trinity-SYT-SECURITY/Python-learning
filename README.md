@@ -1543,8 +1543,37 @@ print(str2)#3.5343
 + 定義函數 -> 封裝獨立的功能
 + 調用函數 -> 享受封裝的成果
 函數的作用，在開發程序時，使用函數可以提高編寫的效率以及代碼的重用
+![image](https://user-images.githubusercontent.com/96654161/171398665-db77601b-a538-4b58-b033-d1ea510a62b3.png)
+
+```python=
+#test.py
+# 定義函數
+def multiple_table():  # 函數封裝
+    i = 1
+    while i <= 9:
+        # 內循環
+        j = 1
+        while j <= i:
+            print("{}*{}={}".format(j, i, i * j), end="\t")
+            j += 1
+        print("")  # 什麼都不打印，但要換行
+        i += 1
+# 定義新函數
+def meow():
+    print("meow")
+# 若沒有調用函數，則不會輸出函數內代碼
+# multiple_table()  # 調用函數
+
+#test2.py 跨文件導入函數 需要先倒入該函數所在的檔案
+import test  # 導入模塊
+# 使用模塊內函數
+test.multiple_table()
+
+test.meow()
 
 
+
+```
 
 
 
