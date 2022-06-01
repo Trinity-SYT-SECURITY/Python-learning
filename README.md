@@ -1545,6 +1545,15 @@ print(str2)#3.5343
 函數的作用，在開發程序時，使用函數可以提高編寫的效率以及代碼的重用
 ![image](https://user-images.githubusercontent.com/96654161/171398665-db77601b-a538-4b58-b033-d1ea510a62b3.png)
 
+`def是英文define的縮寫`
+函數名稱應該都能夠表達函數封裝代碼的功能，方便後續的調用(最好是有意義的取名較容易識別區塊函數的作用)
+
++ 函數名稱的命名應該符合標示符的命名規則
+ + 可以由字母、底線、數字組成
+ + 不可以以數字做開頭
+ + 不可關鍵字重名
+
+必須先定義好函數才能調用
 ```python=
 #test.py
 # 定義函數
@@ -1570,12 +1579,34 @@ import test  # 導入模塊
 test.multiple_table()
 
 test.meow()
-
-
-
 ```
+>如果希望給函數添加註釋，應該在定義函數的下方，使用連續的三對引號
+>在連續的三對引號之間編寫對函數的說明文字
+>在函數調用位置，使用快捷鍵ctrl+Q可以查看函數的說明信息
 
+![image](https://user-images.githubusercontent.com/96654161/171430412-e573bd0e-90ef-4d70-a4d0-7f6387067a3e.png)
 
+**函數參數**
+開發一個sum_num的函數，函數可以實現兩個數字的求和功能
+```python=
+def sum_num(num1, num2):  # 形參
+    """計算兩數和"""
 
+    result = num1 + num2
+
+    print("%d+%d=%d" % (num1, num2, num1+num2))
+    print(id(num1))
+    print(id(num2))
+
+sum_num(100, 200)  # 實參 調用函數計算100和200 在不對函數內的程式進行更動的情況下
+# 100+200=300
+# 在傳遞參數的過程中，實際上傳遞的是實參引用(id)
+
+print(id(sum_num(1, 2)))
+# 1+2=3
+# 140733332233432 地址
+# sum_num(1, 2)中的num1、num2如果值改變，地址是不會變的
+```
+![image](https://user-images.githubusercontent.com/96654161/171445979-54b02402-1729-4759-bcd1-9816132398e7.png)
 
 
